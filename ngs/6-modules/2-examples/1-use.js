@@ -1,3 +1,3 @@
-const api = require('./1-object');
+import { language, direction, encoding } from './1-object';
 
-console.log(api.language, api.direction, api.encoding);
+console.log(language, direction, encoding);

@@ -1,4 +1,4 @@
-const fs = require('fs').promises;
+import { promises as fs } from 'fs';
 
 async function main() {
   const data = await fs.readFile(__filename);

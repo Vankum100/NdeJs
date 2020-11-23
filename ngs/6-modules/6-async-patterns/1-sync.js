@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFileSync } from 'fs';
 
-const data = fs.readFileSync(__filename);
+const data = readFileSync(__filename);
 
 console.log('File data is', data);
 

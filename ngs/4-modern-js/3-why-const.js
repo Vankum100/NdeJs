@@ -6,7 +6,7 @@ A big program here...
 
 */
 
-answer // is still 42;
+console.log(answer);// is still 42;
 
 
 
@@ -14,7 +14,7 @@ answer // is still 42;
 
 
 
-let answer = 42;
+let answer1 = 42;
 
 /*
 
@@ -22,4 +22,4 @@ A big program here...
 
 */
 
-answer // might have changed;
+console.log(answer1);// might have changed;

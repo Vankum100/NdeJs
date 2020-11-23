@@ -1,12 +1,12 @@
-const path = require('path');
-const fs = require('fs');
+import { resolve } from 'path';
+import { readFileSync } from 'fs';
 
 const files = ['.bash_profile', 'kjkjhh', '.npmrc'];
 
 files.forEach(file => {
   try {
-    const filePath = path.resolve(process.env.HOME, file);
-    const data = fs.readFileSync(filePath);
+    const filePath = resolve(process.env.HOME, file);
+    const data = readFileSync(filePath);
     console.log('File data is', data);
   } catch (err) {
     if (err.code === 'ENOENT') {

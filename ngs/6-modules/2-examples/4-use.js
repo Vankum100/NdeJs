@@ -1,4 +1,4 @@
-const templateGenerator = require('./4-function');
+import templateGenerator from './4-function';
 
 const myTemplate = templateGenerator('Hello Node!');
 

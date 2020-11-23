@@ -1,7 +1,7 @@
-const fs = require('fs');
-const util = require('util');
+import { readFile as _readFile } from 'fs';
+import { promisify } from 'util';
 
-const readFile = util.promisify(fs.readFile);
+const readFile = promisify(_readFile);
 
 async function main() {
   const data = await readFile(__filename);

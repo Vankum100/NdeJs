@@ -1,6 +1,6 @@
 // Top-level API is a function
 
-module.exports = title => `
+export default title => `
   <!DOCTYPE html>
   <html lang="en">
   <head>

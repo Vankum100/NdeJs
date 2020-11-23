@@ -1,4 +1,4 @@
-const { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
 // Print Working Directory
 const pwd = spawn('pwd');

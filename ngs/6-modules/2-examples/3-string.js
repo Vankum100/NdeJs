@@ -1,6 +1,6 @@
 // Top-level API is a string
 
-module.exports = `
+export default `
   <!DOCTYPE html>
   <html lang="en">
   <head>

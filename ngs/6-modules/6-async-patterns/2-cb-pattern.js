@@ -1,6 +1,6 @@
-const fs = require('fs');
+import { readFile } from 'fs';
 
-fs.readFile(__filename, function cb(err, data) {
+readFile(__filename, function cb(err, data) {
   console.log('File data is', data);
 });
 

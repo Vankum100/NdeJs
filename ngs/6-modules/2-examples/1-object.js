@@ -1,7 +1,5 @@
-// Top-level API is a simple object (no need to use module.exports)
+export const language = 'English';
 
-exports.language = 'English';
+export const direction = 'RTL';
 
-exports.direction = 'RTL';
-
-exports.encoding = 'UTF-8';
+export const encoding = 'UTF-8';
