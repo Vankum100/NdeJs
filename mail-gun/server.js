@@ -7,7 +7,7 @@ const sendMail = require('./mail');
 const { log } = console;
 const app = express();
 
-const PORT = 8080;
+const PORT = 5000;
 
 
 // Data parsing
@@ -51,4 +51,4 @@ app.get('/email/sent', (req, res) => {
 
 
 // Start server
-app.listen(PORT, () => log('Server is starting on PORT, ', 8080));
+app.listen(PORT, () => log('Server is starting on PORT, ', 5000));
