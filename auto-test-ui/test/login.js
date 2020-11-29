@@ -4,7 +4,7 @@ const expect = require('assert');
 require('geckodriver');
 require('chromedriver');
 
-const Login = require('./pageObject/Login.page.js');
+const Login = require('../pageObject/Login.page.js');
 
 const validUser = {
     email: 'valid@user.com',
