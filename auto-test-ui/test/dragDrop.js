@@ -11,17 +11,17 @@ const DragAndDropPage = require('../pageObject/dragDrop.js');
 
 suite(function(env) {
     describe('Drag and drop demo', function () {
-        this.timeout(20000);
+        this.timeout(30000);
         let driver;
         let page;
 
         before(async function() {
-            driver = await env.builder().build();
+            driver = env.builder().build();
             page = new DragAndDropPage(driver);
-            await page.open();
+            page.open();
         });
 
-        it('Updates status text', async function() {
+        it('Updates Droped status text', async function() {
             await page.dragDrop();
             let droppable = await driver.findElement(page.locators.droppable);
             var text = await droppable.getText();

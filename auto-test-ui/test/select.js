@@ -8,7 +8,7 @@ require('chromedriver');
 
 suite(function(env) {
     describe('Dropdown and Radio Selection', function () {
-        this.timeout(25000);
+        this.timeout(30000);
         let driver;
         let page;
 
