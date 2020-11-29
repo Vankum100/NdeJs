@@ -1,0 +1,17 @@
+{
+  "name": "autotest-with-selenium-webdriver",
+  "version": "0.0.0",
+  "description": "Selenium automated testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Kum Kenneth",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "chromedriver": "^87.0.0",
+    "geckodriver": "^1.21.0",
+    "mocha": "^5.1.1",
+    "selenium-webdriver": "4.0.0-alpha.1"
+  }
+}
