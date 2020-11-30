@@ -1,5 +1,7 @@
 // Include the chrome driver 
 require("chromedriver"); 
+const assert = require('assert');
+
 
 // Include selenium webdriver 
 let swd = require("selenium-webdriver"); 
@@ -72,8 +74,13 @@ tabToOpen
 		let promiseClickSignIn = signInBtn.click(); 
 		return promiseClickSignIn; 
 	}) 
-	.then(function () { 
+	.then(function () {
+	
 		console.log("Successfully signed in GEEKSFORGEEKS!"); 
+
+		
+
+		//tab.quit();
 	}) 
 	.catch(function (err) { 
 		console.log("Error ", err, " occurred!"); 
