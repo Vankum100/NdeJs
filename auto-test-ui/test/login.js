@@ -1,72 +1,93 @@
-const {Browser, By, Key, until} = require("selenium-webdriver");
-const {suite} = require("selenium-webdriver/testing");
-const expect = require('assert');
-require('geckodriver');
-require('chromedriver');
+// Include the chrome driver or firefox
 
-const Login = require('../pageObject/Login.page.js');
+require("chromedriver"); 
 
-const validUser = {
-    email: 'valid@user.com',
-    password: 'hunter2'
-};
-const url = 'https://testyourlog.in/example/';
+//require("geckodriver"); 
 
-suite(function(env) {
-    describe('Search In Browser', function () {
-        this.timeout(30000);
-        let driver;
 
-        before(async function() {
-            driver = env.builder().build();
-            await driver.get(url);
-            
-        });
-        it('should have proper fields', function () {
-            expect(login.$email).toExist();
-            expect(login.$password).toExist();
-            expect(login.$submit).toExist();
-        });
-    
-        it('should let you login with valid credentials', function () {
-            login.login(validUser);
-    
-            // NOTE replace with your own custom assertion here
-            expect(login.$submit).not.toExist();
-        });
-    
-        it('should error on a missing email', function () {
-            login.login({
-                ...validUser,
-                email: ''
-            });
-    
-            // NOTE replace with your own custom assertion here
-            expect(login.$submit).toExist();
-        });
-    
-        it('should error on a invalid email', function () {
-            login.login({
-                ...validUser,
-                email: 'gobbledegook'
-            });
-    
-            // NOTE replace with your own custom assertion here
-            expect(login.$submit).toExist();
-        });
-    
-        it('should error on missing password', function () {
-            login.login({
-                ...validUser,
-                password: ''
-            });
-    
-            // NOTE replace with your own custom assertion here
-            expect(login.$submit).toExist();
-        });
 
-        after(async function() {
-            driver.quit();
-        });
-    });
-});
+// Include selenium webdriver 
+let swd = require("selenium-webdriver"); 
+let browser = new swd.Builder(); 
+
+let tab = browser.forBrowser("chrome").build(); 
+
+//let tab = browser.forBrowser("firefox").build(); 
+
+// Get the credentials from the JSON file 
+let { email, pass } = require("../credentials.json"); 
+
+// Step 1 - Opening the geeksforgeeks sign in page 
+let tabToOpen = 
+	tab.get("https://auth.geeksforgeeks.org/"); 
+tabToOpen 
+	.then(function () { 
+
+		// Timeout to wait if connection is slow 
+		let findTimeOutP = 
+			tab.manage().setTimeouts({ 
+				implicit: 10000, // 10 seconds 
+			}); 
+		return findTimeOutP; 
+	}) 
+	.then(function () { 
+
+		// Step 2 - Finding the username input 
+		let promiseUsernameBox = 
+			tab.findElement(swd.By.css("#luser")); 
+		return promiseUsernameBox; 
+	}) 
+	.then(function (usernameBox) { 
+
+		// Step 3 - Entering the username 
+		let promiseFillUsername = 
+			usernameBox.sendKeys(email); 
+		return promiseFillUsername; 
+	}) 
+	.then(function () { 
+		console.log( 
+			"Username entered successfully in" + 
+			"'login demonstration' for GEEKSFORGEEKS"
+		); 
+
+		// Step 4 - Finding the password input 
+		let promisePasswordBox = 
+			tab.findElement(swd.By.css("#password")); 
+		return promisePasswordBox; 
+	}) 
+	.then(function (passwordBox) { 
+
+		// Step 5 - Entering the password 
+		let promiseFillPassword = 
+			passwordBox.sendKeys(pass); 
+		return promiseFillPassword; 
+	}) 
+	.then(function () { 
+		console.log( 
+			"Password entered successfully in" + 
+			" 'login demonstration' for GEEKSFORGEEKS"
+		); 
+
+		// Step 6 - Finding the Sign In button 
+		let promiseSignInBtn = tab.findElement( 
+			swd.By.css(".btn.btn-green.signin-button") 
+		); 
+		return promiseSignInBtn; 
+	}) 
+	.then(function (signInBtn) { 
+
+		// Step 7 - Clicking the Sign In button 
+		let promiseClickSignIn = signInBtn.click(); 
+		return promiseClickSignIn; 
+	}) 
+	.then(function () {
+	
+		console.log("Successfully signed in GEEKSFORGEEKS!"); 
+
+		
+
+		//tab.quit();
+	}) 
+	.catch(function (err) { 
+		console.log("Error ", err, " occurred!"); 
+	}); 

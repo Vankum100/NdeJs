@@ -9,7 +9,7 @@ const url = 'https://www.google.com/';
 
 suite(function(env) {
     describe('Search In Browser', function () {
-        this.timeout(30000);
+        this.timeout(45000);
         let driver;
 
         before(async function() {

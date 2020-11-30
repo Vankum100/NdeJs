@@ -12,7 +12,7 @@ const ButtonsPage = require('../pageObject/buttons.js');
 
 suite(function(env) {
     describe('RSVP site', async function () {
-        this.timeout(30000);
+        this.timeout(45000);
         let driver;
         // Define a variable to hold the page object here so that it stays in scope
         // for all our tests as well.
@@ -62,7 +62,7 @@ suite(function(env) {
 
 suite(function(env) {
     describe('Save button', function () {
-        this.timeout(30000);
+        this.timeout(45000);
         let driver;
         let page;
 

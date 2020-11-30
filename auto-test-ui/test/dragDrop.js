@@ -11,7 +11,7 @@ const DragAndDropPage = require('../pageObject/dragDrop.js');
 
 suite(function(env) {
     describe('Drag and drop demo', function () {
-        this.timeout(30000);
+        this.timeout(45000);
         let driver;
         let page;
 
