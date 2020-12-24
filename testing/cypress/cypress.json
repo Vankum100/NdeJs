@@ -1,0 +1,7 @@
+{
+  "defaultCommandTimeout": 200000,
+  "requestTimeout": 200000,
+  "viewportHeight": 800,
+  "viewportWidth": 800,
+    "videoCompression": false
+}

@@ -1,0 +1,13 @@
+{
+  "description": "Example of using emails with Cypress JS",
+  "scripts": {
+    "itests":" CYPRESS_API_KEY='your-api-key' npm run test",
+    "test": "cypress run",
+    "dev": "cypress open",
+    "postinstall": "cypress install"
+  },
+  "dependencies": {
+    "cypress": "^4.4.1",
+    "mailslurp-client": "^8.9.1"
+  }
+}
