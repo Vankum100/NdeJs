@@ -1,0 +1,14 @@
+{
+    "defaultCommandTimeout": 90000,
+    "requestTimeout": 90000,
+    "viewportHeight": 800,
+    "viewportWidth": 800,
+    "videoCompression": false,
+    
+    "projectId": "8xidbr",
+
+    "env": {
+      "API_KEY": "your-key"
+    }
+    
+  }
