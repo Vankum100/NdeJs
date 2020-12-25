@@ -1,7 +1,7 @@
 const assert = require('assert');
 const MailSlurp = require('mailslurp-client').default;
 const apiKey =
-  'your-key';
+  '074a632d61ca3449410d05b1303766e8d45eeac755177fbe13c9bd19b760a7cd';
 const mailslurp = new MailSlurp({ apiKey });
 
 describe('sign up, confirm, login and reset', () => {

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node test/login.test.js",
     "test": "npx wdio wdio.conf.js"
   },
   "keywords": [],
@@ -16,7 +17,10 @@
     "@wdio/spec-reporter": "^6.10.6",
     "@wdio/sync": "^6.10.11",
     "chromedriver": "^87.0.4",
-    "wdio-chromedriver-service": "^6.0.4"
+    "wdio-chromedriver-service": "^6.0.4",
+    "geckodriver": "^1.21.0",
+    "mocha": "^5.1.1",
+    "selenium-webdriver": "4.0.0-alpha.1"
   },
   "dependencies": {
     "mailslurp-client": "^10.2.1"

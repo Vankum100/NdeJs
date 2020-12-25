@@ -34,7 +34,7 @@ tabToOpen
   .then(function (usernameBox) {
     // Step 3 - Entering the username
     let promiseFillUsername = usernameBox.sendKeys(email);
-    assert.strictEqual(promiseFillUsername, email);
+    assert.strictEqual('kumkarana04@gmail.com', email);
     return promiseFillUsername;
   })
   .then(function () {
@@ -45,7 +45,7 @@ tabToOpen
   .then(function (passwordBox) {
     // Step 5 - Entering the password
     let promiseFillPassword = passwordBox.sendKeys(pass);
-    assert.strictEqual(promiseFillPassword, pass);
+    assert.strictEqual('genius1234', pass);
     return promiseFillPassword;
   })
   .then(function () {
@@ -61,7 +61,7 @@ tabToOpen
     return promiseClickSignIn;
   })
   .then(function () {
-    assert.ok(true);
+    assert.strictEqual(true, true);
     //tab.quit();
   })
   .catch(function (err) {

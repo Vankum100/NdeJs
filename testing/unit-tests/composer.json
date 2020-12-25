@@ -1,0 +1,14 @@
+{
+    
+    "description": "example of unit in php",
+    "repositories": [
+      {
+        "type": "git",
+        "url": "https://github.com/mailslurp/swagger-sdk-php.git"
+      }
+    ],
+    "require": {
+      "mailslurp/mailslurp-client-php": "dev-master",
+      "phpunit/phpunit": "^8"
+    }
+  }
