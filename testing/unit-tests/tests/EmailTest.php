@@ -9,7 +9,7 @@ final class EmailTest extends TestCase
     {
        
         return MailSlurp\Configuration::getDefaultConfiguration()
-            ->setApiKey('x-api-key',  '074a632d61ca3449410d05b1303766e8d45eeac755177fbe13c9bd19b760a7cd');
+            ->setApiKey('x-api-key',  'api-key');
     }
 
     public function test_CanCreateAnInbox_ThenSendAndReceiveEmails()

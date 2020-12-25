@@ -1,3 +1,5 @@
 node_modules
 outputs
 vendor
+composer.json
+config.env
