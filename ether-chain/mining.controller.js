@@ -3,7 +3,7 @@ const Account = mongoose.model('Account');
 
 exports.spend_coin = async function (req, res) {
   let resInfo = {};
-  let account;
+
   let updateAcc = new Account({});
 
   Account.findById(req.params.walletId, (err, account) => {
@@ -16,18 +16,16 @@ exports.spend_coin = async function (req, res) {
       resInfo.startAccountInfo = startAccountInfo;
       let newBalance = 0;
       let newTimestamp = Date.now();
-      const minQueryIntervalsMs = 120000; // 2 minutes
+      const minQueryIntervalsMs = 120000; // 2 minutes ( 10 minutes можно пока две для dev time)
 
       if (newTimestamp < account.timestamp + minQueryIntervalsMs) {
         account.vETH = account.vETH + 1;
-        console.log('newBalance1:  ' + account.vETH);
       } else {
         console.log("spamAlert: 'Mining intervals is 10 minutes minimum");
       }
 
       if (account.vETH > 0) {
         newBalance = account.vETH - 0.05;
-        console.log('newBalance:  ' + newBalance);
       } else {
         console.log('lowFunds: You have  zero vETH and cannot mine coins');
       }

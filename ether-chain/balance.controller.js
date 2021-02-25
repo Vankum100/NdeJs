@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Account = mongoose.model('Account');
-//const ethereum_controller = require('./ethereum.controller');
 
 exports.balance_info = async function (req, res) {
   Account.findById(req.params.walletId, (err, account) => {

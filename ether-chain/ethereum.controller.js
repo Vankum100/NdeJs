@@ -19,8 +19,6 @@ exports.get_new_transaction = async function (req, res) {
     console.log(chalk.red('REQUEST ERROR in get_new_address'));
     return ethData.result;
   }
-  console.log(ethData.result);
-  return ethData.result;
 };
 
 class CryptoBlock {
@@ -56,7 +54,7 @@ class CryptoBlock {
 class CryptoBlockchain {
   constructor() {
     this.blockchain = [this.startGenesisBlock()];
-    this.difficulty = 2;
+    this.difficulty = 4; // пруф 4 нуля
   }
   startGenesisBlock() {
     return new CryptoBlock(0, '01/01/2020', 1, '0');

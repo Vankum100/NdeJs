@@ -23,7 +23,6 @@ exports.new_account = async function (req, res) {
     if (err) {
       res.send(err);
     }
-    //console.log('***' + dbResponse + '***');
     resInfo.newAccountDetails = dbResponse;
     res.send(resInfo);
   });
